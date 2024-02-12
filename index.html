@@ -39,10 +39,21 @@
           <span>Выберите правильный вариант и нажмите кнопку Проверить</span>
         </td>
         <td>
-          <input type="radio" name="answer3" value="1"> Вариант 1<br>
-          <input type="radio" name="answer3" value="2"> Вариант 2<br>
-          <input type="radio" name="answer3" value="3"> Вариант 3<br>
-          <input type="radio" name="answer3" value="4"> Вариант 4<br>
+          <input type="checkbox" name="answer31" value="1"> Вариант 1<br>
+          <input type="checkbox" name="answer32" value="2"> Вариант 2<br>
+          <input type="checkbox" name="answer33" value="3"> Вариант 3<br>
+          <input type="checkbox" name="answer34" value="4"> Вариант 4<br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="image3.jpg" alt="Image 3">
+          <br>
+          <span>Выберите правильный вариант и нажмите кнопку Проверить</span>
+        </td>
+        <td>
+          Введите ответ:<br>
+          <input type="text" name="answer4" value="1">
         </td>
       </tr>
     </table>
@@ -55,15 +66,23 @@
       var correctAnswers = 0;
       var answer1 = document.querySelector('input[name="answer1"]:checked');
       var answer2 = document.querySelector('input[name="answer2"]:checked');
-      var answer3 = document.querySelector('input[name="answer3"]:checked');
-
+      var answer31 = document.querySelector('input[name="answer31"]').value;
+      var answer32 = document.querySelector('input[name="answer32"]').value;
+      var answer33 = document.querySelector('input[name="answer33"]').value;
+      var answer34 = document.querySelector('input[name="answer34"]').value;
+      var answer4=document.querySelector('input[name="answer4"]').value;
+      console.log(answer4)
       if (answer1 && answer1.value == "2") {
         correctAnswers++;
       }
       if (answer2 && answer2.value == "3") {
         correctAnswers++;
       }
-      if (answer3 && answer3.value == "1") {
+      //Если правильно хотя бы один вариант то || (ИЛИ), если нужно выбрать все варианты, то && (И)
+      if ((answer31.value || answer32.value)) {
+        correctAnswers++;
+      }
+      if (answer4=='1') {
         correctAnswers++;
       }
 
