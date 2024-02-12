@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тест</title>
+</head>
+<body>
+  <h1 style="text-align: center;">Тест "Логические функции"</h1>  
+    <table>
+      <tr>
+        <td>
+          <img src="image1.jpg" alt="Image 1">
+          <br>
+          <span>Выберите правильный вариант и нажмите кнопку <strong>Проверить</strong></span><br>
+        </td>
+        <td>
+          <input type="radio" name="answer1" value="1"> Вариант 1<br>
+          <input type="radio" name="answer1" value="2"> Вариант 2<br>
+          <input type="radio" name="answer1" value="3"> Вариант 3<br>
+          <input type="radio" name="answer1" value="4"> Вариант 4<br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="image2.jpg" alt="Image 2">
+          <br>
+          <span>Выберите правильный вариант и нажмите кнопку Проверить</span>
+        </td>
+        <td>
+          <input type="radio" name="answer2" value="1"> Вариант 1<br>
+          <input type="radio" name="answer2" value="2"> Вариант 2<br>
+          <input type="radio" name="answer2" value="3"> Вариант 3<br>
+          <input type="radio" name="answer2" value="4"> Вариант 4<br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="image3.jpg" alt="Image 3">
+          <br>
+          <span>Выберите правильный вариант и нажмите кнопку Проверить</span>
+        </td>
+        <td>
+          <input type="radio" name="answer3" value="1"> Вариант 1<br>
+          <input type="radio" name="answer3" value="2"> Вариант 2<br>
+          <input type="radio" name="answer3" value="3"> Вариант 3<br>
+          <input type="radio" name="answer3" value="4"> Вариант 4<br>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <input type="button" value="Проверить" onclick="checkAnswers()">
+  
+
+  <script>
+    function checkAnswers() {
+      var correctAnswers = 0;
+      var answer1 = document.querySelector('input[name="answer1"]:checked');
+      var answer2 = document.querySelector('input[name="answer2"]:checked');
+      var answer3 = document.querySelector('input[name="answer3"]:checked');
+
+      if (answer1 && answer1.value == "2") {
+        correctAnswers++;
+      }
+      if (answer2 && answer2.value == "3") {
+        correctAnswers++;
+      }
+      if (answer3 && answer3.value == "1") {
+        correctAnswers++;
+      }
+
+      alert('Количество правильных ответов: ' + correctAnswers);
+    }
+  </script>
+</body>
+</html>
